@@ -3,7 +3,6 @@ asyncio
 pandas
 requests
 colorama
-typing
 flask_session==0.4.0
 sentry-sdk
 parse
@@ -14,4 +13,3 @@ pyyaml
 flask-profiler
 bs4
 cryptography
-
