@@ -3,7 +3,6 @@
 
 import os
 import uuid
-import sentry_sdk
 import _thread
 import redis
 from flask import Flask, render_template, redirect, send_from_directory, request, abort, g
@@ -97,15 +96,6 @@ else:
 
 app.template_folder = 'templates'
 Session(app)
-
-sentry_sdk.init(
-    dsn="https://d49e7961629840df81a18ecffa42a15a@o361988.ingest.sentry.io/4505069577371648",
-
-    # Set traces_sample_rate to 1.0 to capture 100%
-    # of transactions for performance monitoring.
-    # We recommend adjusting this value in production.
-    traces_sample_rate=1.0
-)
 
 
 def before_request():
