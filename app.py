@@ -32,6 +32,23 @@ global_announcement = {
 global_announcement_id = 404
 if type(session_type) != type(None):
     if session_type.lower() == 'redis':
+        import redis
+        app.config['SESSION_TYPE'] = 'redis'
+        redisurl = ReadConf('REDIS_URL')
+        if redisurl == None or redisurl == '':
+            redis_host = ReadConf('REDIS_HOST')
+            redis_port = ReadConf('REDIS_PORT')
+            redis_user = ReadConf('REDIS_USERNAME')
+            redis_pass = ReadConf('REDIS_PASSWORD')
+            redis_ssl = ReadConf('REDIS_SSL')
+            if redis_host == None or redis_port == None or redis_pass == None:
+                print('Redis url is not set.')
+                os._exit(1)
+            else:
+                app.config['SESSION_REDIS'] = redis.Redis(
+                    host=redis_host, port=int(redis_port), username=redis_user, password=redis_pass, ssl=redis_ssl)
+        else:
+            app.config['SESSION_REDIS'] = redis.from_url(redisurl)
         print('Redis has been set to session.')
     else:
         secret = str(uuid.uuid4())
