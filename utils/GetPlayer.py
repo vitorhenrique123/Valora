@@ -6,6 +6,7 @@ apServer = 'https://pd.ap.a.pvp.net'
 naServer = 'https://pd.na.a.pvp.net'
 euServer = 'https://pd.eu.a.pvp.net'
 krServer = 'https://pd.kr.a.pvp.net'
+brServer = 'https://pd.na.a.pvp.net'
 
 # API path
 
@@ -50,6 +51,8 @@ class player:
             server = euServer
         elif region == 'na':
             server = naServer
+        elif region == 'br':
+            server = brServer
         else:
             server = krServer
         self.server = server

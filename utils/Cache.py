@@ -437,7 +437,8 @@ def UpdatePriceOffer(access_token, entitlement, region):
         'ap': 'https://pd.ap.a.pvp.net',
         'na': 'https://pd.na.a.pvp.net',
         'eu': 'https://pd.eu.a.pvp.net',
-        'kr': 'https://pd.kr.a.pvp.net'
+        'kr': 'https://pd.kr.a.pvp.net',
+        'br': 'https://pd.na.a.pvp.net'
     }
     __header = {
             'Authorization': f'Bearer {access_token}',

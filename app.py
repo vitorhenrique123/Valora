@@ -4,6 +4,7 @@
 import os
 import uuid
 import _thread
+import redis
 from flask import Flask, render_template, redirect, send_from_directory, request, abort, g
 from flask_babel import Babel
 from flask_session import Session
