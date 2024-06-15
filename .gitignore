@@ -6,6 +6,5 @@ flask_session
 env.sh
 flask_profiler.sql
 test*
-*.pem
 .vercel
 venv
