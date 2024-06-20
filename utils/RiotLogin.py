@@ -50,7 +50,7 @@ class Auth:
         self.session.mount('https://', SSLAdapter())
         self.authed = False
         self.MFA = False
-        self.remember = False
+        self.remember = True
 
     def auth(self, MFACode=''):
         tokens = self.authorize(MFACode)
